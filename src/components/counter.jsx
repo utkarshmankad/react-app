@@ -20,16 +20,10 @@ class Counter extends Component {
           {this.formatCount()}
         </span>
         <button
-          onClick={this.handleAdd}
+          onClick={() => this.handleAdd()}
           className="btn btn-secondary btn-sm m-3"
         >
           Add
-        </button>
-        <button
-          onClick={this.handleMinus}
-          className="btn btn-secondary btn-sm m-3"
-        >
-          Minus
         </button>
         {this.state.tags.length === 0 && "Please create new tags !!"}
         {this.renderTags()}
@@ -41,12 +35,6 @@ class Counter extends Component {
     //binding events to state
     // console.log("add", this);
     this.setState({ count: this.state.count + 1 });
-  };
-
-  handleMinus = () => {
-    //binding events to state
-    // console.log("add", this);
-    this.setState({ count: this.state.count - 1 });
   };
 
   renderTags() {
